@@ -102,8 +102,22 @@
         <div class="container text-center">
           <div class="row">
             <div class="col">
-              <p>If you live in the Avalanche broadcast region:</p>
-              <img src="<?php echo $avalancheChannelLogo; ?>" width="200"/>
+              <?php
+                if($isLocalTv) {
+              ?>
+                <p>If you live in the Avalanche broadcast region:</p>
+                <p>If you live in the Denver Media Market:</p>
+                <img src="<?php echo $avalancheChannelLogo; ?>" width="200"/>
+                <p>If you live outside the Denver Media Market:</p>
+                <img src="https://watchtheavs.com/_img/league/colorado-avalanche/altitude-sports.png" width="200"/>
+              <?php
+                } else {
+              ?>
+                <p>If you live in the Avalanche broadcast region:</p>
+                <img src="<?php echo $avalancheChannelLogo; ?>" width="200"/>
+              <?php
+                }
+              ?>
             </div>
             <div class="col">
               <p>If you live in the <?php echo $opponentTeamName; ?> broadcast region:</p>
