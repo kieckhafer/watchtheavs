@@ -43,10 +43,6 @@
   $opponentTvId = $Data['opponent_tv_id'];
   $opponentChannelLogo = $Data['opponent_channel_logo'];
 
-  // Canadian TV ID's
-  $canadianTvIdArray = array('3363b569-791e-4f14-8755-fe7c64f96464'); // Jets
-  $isOpponentCanadian = in_array($opponentTeamId, $canadianTvIdArray);
-
   // -----
 
   $Query = "SELECT game.national, game.national_tv_id, league.channel_logo as national_channel_logo from watchmyteam.avalanche as game LEFT JOIN watchmyteam.league as league ON game.national_tv_id = league.id WHERE game.id = '$gameId'";
@@ -73,6 +69,9 @@
   <body>
     <div class="header-logo">
       <img src="_img/logo.png" class="tv-logo" />
+    </div>
+    <div class="container no-color">
+      <h4>Your guide to what channel the Avs game is on, while watching from the United States.</h4>
     </div>
     <div class="container">
       <h3>Next game: <?php echo $formattedDate; ?> MT.</h3>
