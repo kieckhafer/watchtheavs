@@ -4,7 +4,12 @@
 
   $gameId = $_GET['gameId'];
 
-  $Query = "SELECT game.id, game.date FROM watchmyteam.avalanche as game WHERE game.date >= CURDATE() ORDER BY game.date ASC LIMIT 0,1";
+  define('TIMEZONE', 'America/Denver');
+  date_default_timezone_set(TIMEZONE);
+
+  $queryDate = date("Y-m-d");
+
+  $Query = "SELECT game.id, game.date FROM watchmyteam.avalanche as game WHERE game.date >= '$queryDate' ORDER BY game.date ASC LIMIT 0,1";
   if(isset($gameId)) {
     $Query = "SELECT game.id, game.date FROM watchmyteam.avalanche as game WHERE game.idint = $gameId ORDER BY game.date ASC LIMIT 0,1";
   }
@@ -138,7 +143,7 @@
               ?>
                 <p>If you live outside either of these broadcast regions*:</p>
                 <img src="<?php echo $nationalChannelLogo; ?>" width="200"/>
-                <p><em>*Some areas that fall in multiple team regions might be blacked out on ESPN+</em></p>
+                <p><em>*Some areas that fall in multiple team regions might be blacked out</em></p>
               <?php
                 }
               ?>
@@ -193,6 +198,15 @@
       </iframe>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="kofi">
+      <iframe id='kofiframe' src='https://ko-fi.com/kieckhafer/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#6F263D;' height='712' title='kieckhafer'></iframe>
+    </div>
+
+    <div class="container">
+      <p>WatchTheAvs.com is an entertainment website, and should not be used as an official source for anything related to any of the leagues or teams represented.</p>
+      <p>All names, logos, and likenesses are property of their respective owners and leages.</p>
+      <p>&copy; <?php echo date("Y"); ?> <a href="https://codeandsons.com" target="_blank">Code & Sons</a>. All rights reserved.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></>
   </body>
 </html>
