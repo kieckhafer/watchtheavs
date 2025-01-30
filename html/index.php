@@ -69,7 +69,7 @@
     <link rel="icon" type="image/x-icon" href="_img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="_css/style.css" />
+    <link rel="stylesheet" href="_css/style.css?time=123456789" />
   </head>
 
   <body>
@@ -241,7 +241,7 @@
     </div>
 
     <div class="kofi">
-      <iframe id='kofiframe' src='https://ko-fi.com/kieckhafer/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#6F263D;' height='712' title='kieckhafer'></iframe>
+      <iframe id='kofiframe' src='https://ko-fi.com/kieckhafer/?hidefeed=true&widget=true&embed=true&preview=true' style='border:solid 3px #000;border-radius:10px;width:100%;padding:0px;background:#236192;' height='712' title='kieckhafer'></iframe>
     </div>
 
     <div class="container">
